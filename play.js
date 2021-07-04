@@ -1,7 +1,9 @@
 const connect = require("./client");
 const setupInput = require("./input");
+require('events').EventEmitter.defaultMaxListeners = 0;
 
 console.log("Connecting ...");
-connect();
-  
-setupInput();
+let conn = connect('RA');
+
+
+setupInput(conn);
